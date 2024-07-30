@@ -1,14 +1,421 @@
-/**
- * Theme Name: Spectra One
- * Author: Brainstorm Force
- * Author URI: https://brainstormforce.com/
- * Description: Spectra One is a beautiful and modern WordPress theme built with the Full Site Editing (FSE) feature. It's a versatile theme that can be used for blogs, portfolios, businesses, and more. Spectra One comes with a sleek and professional design that will make your website stand out from the crowd.
- * Requires at least: 6.1
- * Tested up to: 6.6
- * Requires PHP: 7.4
- * Version: 1.1.4
- * License: GNU General Public License v2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: spectra-one
- * Tags: full-site-editing, blog, theme-options, translation-ready, rtl-language-support, full-width-template
-*/
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(68.2deg, rgb(7, 3, 98) -0.1%, rgb(179, 26, 132) 47.7%, rgb(239, 186, 83) 100.2%);
+    overflow-x: hidden;
+    width: 1375px;
+}
+
+.header {
+    position: relative;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.header .top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.header .top-right a {
+    color: white;
+    text-decoration: none;
+}
+
+.header .top-right img {
+    width: 24px;
+    height: 24px;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1000px;
+    animation: fadeIn 2s ease-out;
+}
+
+.header h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: slideIn 1.5s ease-out;
+}
+
+.header p {
+    font-size: 1.3em;
+    margin: 0 auto 30px auto;
+    max-width: 700px;
+    line-height: 1.5;
+    animation: slideIn 1.5s ease-out;
+}
+
+.button-container {
+    margin: 20px 0;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.button {
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.primary-button {
+    background-color: #6a0dad; /* Purple */
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: #4b0082; /* Darker Purple */
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 15px rgba(106, 13, 173, 0.4);
+}
+
+.secondary-button {
+    background-color: transparent;
+    border-color: #ffffff;
+    color: white;
+}
+
+.secondary-button:hover {
+    border-color: #6a0dad; /* Purple */
+    color: #6a0dad; /* Purple */
+    background-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 15px rgba(106, 13, 173, 0.4);
+}
+
+.header-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 1.5s ease-out;
+}
+
+/* Services Styles */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 60px 20px;
+    color: #fff;
+}
+
+.service {
+    flex: 1;
+    max-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 300px; /* Fixed height for uniformity */
+}
+
+.service:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%; /* Circular image for a modern look */
+}
+
+.service h3 {
+    margin: 20px 0 10px;
+    font-size: 1.5em;
+    color: #6a0dad; /* Purple for the title */
+}
+
+.service p {
+    font-size: 1em;
+    color: #333; /* Darker text for readability */
+    line-height: 1.6;
+}
+
+/* CTA Styles */
+.cta {
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.cta h2 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+.cta-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-item {
+    background: #ffffff;
+    color: #333333;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 320px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cta-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.cta-number {
+    font-size: 2em; /* Larger, modern number font */
+    font-weight: 700;
+    color: #6a0dad; /* Consistent with background color */
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Modern style */
+}
+
+.cta-heading {
+    font-size: 1.4em;
+    color: #333333;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.cta p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    background-color: #6a0dad; /* Matches the section background */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #4b0082;
+    transform: translateY(-3px);
+}
+
+.faq {
+    color: #fff;
+    padding: 60px 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+.faq-item-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    background: #ffffff;
+    color: #333333;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item h3 {
+    font-size: 1.5em;
+    color: #6a0dad;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.faq-item p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .header p {
+        font-size: 1.1em;
+    }
+
+    .button {
+        padding: 10px 20px;
+    }
+
+    .service {
+        max-width: 90%; /* Full width for small screens */
+        margin: 20px 0;
+    }
+
+    .cta-item {
+        max-width: 90%; /* Full width for small screens */
+    }
+
+    .faq-item {
+        padding: 15px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.about h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+
+.about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-button-container {
+    margin-top: 40px;
+}
+
+.contact-button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background-color: #6a0dad; /* Purple */
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #5d188f; /* Darker Purple */
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 15px rgba(106, 13, 173, 0.4);
+}
+
+#contact-info {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(88, 62, 62, 0.1);
+}
+
+#contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contact-info li {
+    margin: 10px 0;
+}
+
+#contact-info a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact-info a:hover {
+    text-decoration: underline;
+}
+.service22 {
+    background: radial-gradient(263px at 100.2% 3%, rgb(12, 85, 141) 31.1%, rgb(205, 181, 93) 36.4%, rgb(244, 102, 90) 50.9%, rgb(199, 206, 187) 60.7%, rgb(249, 140, 69) 72.5%, rgb(12, 73, 116) 72.6%);
+    flex: 1;
+    max-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 300px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.service22:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
